@@ -5,6 +5,13 @@ public class User {
 	String pass;
 	String role;
 	
+	public User(String userName, String pass, String role) {
+		super();
+		this.userName = userName;
+		this.pass = pass;
+		this.role = role;
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
