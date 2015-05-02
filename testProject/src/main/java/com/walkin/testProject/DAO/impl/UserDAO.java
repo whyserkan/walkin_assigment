@@ -25,10 +25,40 @@ public class UserDAO implements com.walkin.testProject.DAO.UserDAO{
 	}
 
 	@Override
-	public User getUsers(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUser(User user) {
+		String sql = "SELECT * FROM USER WHERE USER_NAME=?";
+		
+		Connection conn = null;
+		User retUser = new User();
+		
+		try {
+			conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, user.getUserName());
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()){
+				
+				retUser = new User(rs.getString("user_name"),rs.getString("pass"),rs.getString("role"));
+				
+			} 
+			
+			rs.close();
+			ps.close();
+			return retUser;
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (conn != null) {
+				try {
+				conn.close();
+				} catch (SQLException e) {e.printStackTrace();}
+			}
+		}
 	}
+	
 	@Override
 	public List<User> getAllUsers() {
 		

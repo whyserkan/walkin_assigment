@@ -6,6 +6,9 @@ public class Checkin {
 	Timestamp checkinTime;
 	String userName;
 	String storeName;
+	Double currentGeoLng;
+	Double currentGeoLat;
+	
 	public Timestamp getCheckinTime() {
 		return checkinTime;
 	}
@@ -23,6 +26,18 @@ public class Checkin {
 	}
 	public void setStoreName(String storeName) {
 		this.storeName = storeName;
+	}
+	public Double getCurrentGeoLng() {
+		return currentGeoLng;
+	}
+	public void setCurrentGeoLng(Double currentGeoLng) {
+		this.currentGeoLng = currentGeoLng;
+	}
+	public Double getCurrentGeoLat() {
+		return currentGeoLat;
+	}
+	public void setCurrentGeoLat(Double currentGeoLat) {
+		this.currentGeoLat = currentGeoLat;
 	}
 	
 }

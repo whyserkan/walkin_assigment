@@ -4,6 +4,19 @@ public class Store {
 	String storeName;
 	Double storeGeoLat;
 	Double storeGeoLng;
+	String userName;
+	
+	public Store(String storeName, Double storeGeoLat, Double storeGeoLng,
+			String userName) {
+		super();
+		this.storeName = storeName;
+		this.storeGeoLat = storeGeoLat;
+		this.storeGeoLng = storeGeoLng;
+		this.userName = userName;
+	}
+	public Store() {
+		super();
+	}
 	
 	public String getStoreName() {
 		return storeName;
@@ -23,5 +36,12 @@ public class Store {
 	public void setStoreGeoLng(Double storeGeoLng) {
 		this.storeGeoLng = storeGeoLng;
 	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
 	
 }
